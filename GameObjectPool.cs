@@ -40,7 +40,7 @@ public class GameObjectPool : MonoBehaviour
     /// Add GameObject to our pool.
     /// </summary>
     /// <param name="gameObject"></param>
-    public GameObject AddGameObject(GameObject newObj, Vector3 pos)
+    public GameObject AddGameObject(GameObject newObj, Vector3 pos, Quaternion rot)
     {
 
         //Check our inactive pool for a similar object.
@@ -51,7 +51,7 @@ public class GameObjectPool : MonoBehaviour
         if(temp == null)
         {
 
-            temp = Instantiate(newObj, pos, Quaternion.identity) as GameObject;
+            temp = newObj;
             temp.name = newObj.name;
             m_ActivePool.Add(temp);
 
