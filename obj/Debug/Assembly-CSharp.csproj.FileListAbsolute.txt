@@ -1,0 +1,12 @@
+G:\Documents\projectRepo\srcs\Unity\ObjectPooling\Temp\bin\Debug\Assembly-CSharp.dll
+G:\Documents\projectRepo\srcs\Unity\ObjectPooling\Temp\bin\Debug\Assembly-CSharp.pdb
+G:\Documents\projectRepo\srcs\Unity\ObjectPooling\Temp\bin\Debug\UnityEditor.dll
+G:\Documents\projectRepo\srcs\Unity\ObjectPooling\Temp\bin\Debug\UnityEngine.dll
+G:\Documents\projectRepo\srcs\Unity\ObjectPooling\Temp\bin\Debug\UnityEngine.UI.dll
+G:\Documents\projectRepo\srcs\Unity\ObjectPooling\Temp\bin\Debug\Mono.Cecil.dll
+G:\Documents\projectRepo\srcs\Unity\ObjectPooling\Temp\bin\Debug\nunit.framework.dll
+G:\Documents\projectRepo\srcs\Unity\ObjectPooling\Temp\bin\Debug\Unity.DataContract.dll
+G:\Documents\projectRepo\srcs\Unity\ObjectPooling\Temp\bin\Debug\ICSharpCode.NRefactory.dll
+G:\Documents\projectRepo\srcs\Unity\ObjectPooling\obj\Debug\Assembly-CSharp.csprojResolveAssemblyReference.cache
+G:\Documents\projectRepo\srcs\Unity\ObjectPooling\obj\Debug\Assembly-CSharp.dll
+G:\Documents\projectRepo\srcs\Unity\ObjectPooling\obj\Debug\Assembly-CSharp.pdb

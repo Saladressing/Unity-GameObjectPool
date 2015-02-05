@@ -37,6 +37,28 @@ public class GameObjectPool : MonoBehaviour
     #region Pool Methods
 
     /// <summary>
+    /// Preload GameObject to our inactive pool.
+    /// </summary>
+    /// <param name="obj"></param>
+    /// <param name="count"></param>
+    public void PreloadGameObject(GameObject obj, int count)
+    {
+        for (int i = 0; i < count; i++)
+        {
+            //Instantiate the object.
+            GameObject temp = Instantiate(obj, Vector3.zero, Quaternion.identity) as GameObject;
+            temp.name = obj.name;
+
+            temp.SetActive(false); // Disable the object.
+            m_InactivePool.Add(temp); // Add object to inactive pool.
+
+#if UNITY_EDITOR
+            PoolDebugger("Preloaded " + temp.name + " to inactive pool.");
+#endif
+        }
+    }
+
+    /// <summary>
     /// Add GameObject to our pool.
     /// </summary>
     /// <param name="gameObject"></param>
@@ -51,7 +73,7 @@ public class GameObjectPool : MonoBehaviour
         if(temp == null)
         {
 
-            temp = newObj;
+            temp = Instantiate(newObj, pos, rot) as GameObject;
             temp.name = newObj.name;
             m_ActivePool.Add(temp);
 
@@ -66,6 +88,7 @@ public class GameObjectPool : MonoBehaviour
         m_InactivePool.Remove(temp);
 
         stale.transform.position = pos;
+        stale.transform.rotation = rot;
         stale.SetActive(true);
         m_ActivePool.Add(stale);
 
