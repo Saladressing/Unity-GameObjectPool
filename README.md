@@ -5,7 +5,7 @@ Object pooling is a great way to improve your games performance. Pooling is typi
 
 # <h3>Methods</h3>
 <h5>PreloadGameObject()</h5>
-Allows you to preload your GameObjects into the pool. These objects will instantiated, disabled, and stored in the inactive pool for use. This method can only be called during runtime.
+Allows you to preload your GameObjects into the pool. These objects will be instantiated, disabled, and stored in the inactive pool for use. This method can only be called during runtime.
 
 ```
 // Load the resource, and preload 5 instances of the object.
@@ -23,4 +23,4 @@ GameObject objInst = GameObjectPool.m_Instance.AddGameObject(obj, Vector3.zero, 
 ```
 
 <h5>Cleaner()</h5>
-The cleaner will remove any stale objects from the active pool. This is typically used for longer game sessions, where the inactive pool may need to be replemish to avoid high memory usage. Avoid high amounts of cleaning as constant loops can deminish performance. Increase the preload count if the inactive pool dries up much sooner than expected.
+The cleaner will remove any stale (disabled) objects from the active pool. This is typically used for longer game sessions, where the inactive pool may need to be replemish to avoid high memory usage. Avoid high amounts of cleaning as constant loops can deminish performance. Increase the preload count if the inactive pool dries up much sooner than expected.
