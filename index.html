@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="viewport" content="width=640">
+
+    <link rel="stylesheet" href="stylesheets/core.css" media="screen">
+    <link rel="stylesheet" href="stylesheets/mobile.css" media="handheld, only screen and (max-device-width:640px)">
+    <link rel="stylesheet" href="stylesheets/github-light.css">
+
+    <script type="text/javascript" src="javascripts/modernizr.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script type="text/javascript" src="javascripts/headsmart.min.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function () {
+        $('#main_content').headsmart()
+      })
+    </script>
+    <title>Unity-gameobjectpool by Palmer11</title>
+  </head>
+
+  <body>
+    <a id="forkme_banner" href="https://github.com/Palmer11/Unity-GameObjectPool">View on GitHub</a>
+    <div class="shell">
+
+      <header>
+        <span class="ribbon-outer">
+          <span class="ribbon-inner">
+            <h1>Unity-gameobjectpool</h1>
+            <h2>Keeps track of all Active and Inactive GameObjects within the Unity Scene.</h2>
+          </span>
+          <span class="left-tail"></span>
+          <span class="right-tail"></span>
+        </span>
+      </header>
+
+      <section id="downloads">
+        <span class="inner">
+          <a href="https://github.com/Palmer11/Unity-GameObjectPool/zipball/master" class="zip"><em>download</em> .ZIP</a><a href="https://github.com/Palmer11/Unity-GameObjectPool/tarball/master" class="tgz"><em>download</em> .TGZ</a>
+        </span>
+      </section>
+
+
+      <span class="banner-fix"></span>
+
+
+      <section id="main_content">
+        <h1>
+<a id="unity-gameobjectpool" class="anchor" href="#unity-gameobjectpool" aria-hidden="true"><span class="octicon octicon-link"></span></a>Unity-GameObjectPool</h1>
+
+<h3>
+<a id="overview" class="anchor" href="#overview" aria-hidden="true"><span class="octicon octicon-link"></span></a>Overview</h3>
+
+<p>Object pooling is a great way to improve your games performance. Pooling is typically used when you need to create and destroy several same type objects in a small amount of time to reduce memory usage.</p>
+
+<h1>
+<a id="methods" class="anchor" href="#methods" aria-hidden="true"><span class="octicon octicon-link"></span></a><h3>
+<a id="methods-1" class="anchor" href="#methods-1" aria-hidden="true"><span class="octicon octicon-link"></span></a>Methods</h3>
+</h1>
+
+<h5>
+<a id="preloadgameobject" class="anchor" href="#preloadgameobject" aria-hidden="true"><span class="octicon octicon-link"></span></a>PreloadGameObject()</h5>
+
+<p>Allows you to preload your GameObjects into the pool. These objects will be instantiated, disabled, and stored in the inactive pool for use. This method can only be called during runtime.</p>
+
+<pre><code>// Load the resource, and preload 5 instances of the object.
+GameObject obj = Resources.Load&lt;GameObject&gt;("object") as GameObject;
+GameObjectPool.m_Instance.PreloadGameObject(obj, 5);
+</code></pre>
+
+<h5>
+<a id="addgameobject" class="anchor" href="#addgameobject" aria-hidden="true"><span class="octicon octicon-link"></span></a>AddGameObject()</h5>
+
+<p>Allows you to add new GameObjects into the pool. If a same type is found within the inactive pool, the pool will avoid creating a new instance, and use the stale object instead.</p>
+
+<pre><code>// Two ways. You can create a instance of the object and carry on,
+// or you can grab the created instance of the object for use.
+GameObjectPool.m_Instance.AddGameObject(obj, Vector3.zero, Quaternion.identity);
+GameObject objInst = GameObjectPool.m_Instance.AddGameObject(obj, Vector3.zero, Quaternion.identity);
+</code></pre>
+
+<h5>
+<a id="cleaner" class="anchor" href="#cleaner" aria-hidden="true"><span class="octicon octicon-link"></span></a>Cleaner()</h5>
+
+<p>The cleaner will remove any stale (disabled) objects from the active pool. This is typically used for longer game sessions, where the inactive pool may need to be replemish to avoid high memory usage. Avoid high amounts of cleaning as constant loops can deminish performance. Increase the preload count if the inactive pool dries up much sooner than expected.</p>
+      </section>
+
+      <footer>
+        <span class="ribbon-outer">
+          <span class="ribbon-inner">
+            <p>this project by <a href="https://github.com/Palmer11">Palmer11</a> can be found on <a href="https://github.com/Palmer11/Unity-GameObjectPool">GitHub</a></p>
+          </span>
+          <span class="left-tail"></span>
+          <span class="right-tail"></span>
+        </span>
+        <p>Generated with <a href="https://pages.github.com">GitHub Pages</a> using Merlot</p>
+        <span class="octocat"></span>
+      </footer>
+
+    </div>
+
+    
+  </body>
+</html>
